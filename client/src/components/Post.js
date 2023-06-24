@@ -26,7 +26,7 @@ export default function Post({
 
   useEffect(() => {
     setIsLiked(checkLiked(_id));
-  }, [likedPosts]);
+  }, [likedPosts, _id]);
 
   async function handleLike() {
     let response;
@@ -82,11 +82,11 @@ export default function Post({
 
   useEffect(() => {
     console.log("id=", _id, "isLiked=", isLiked, "likeCount=", likeCount);
-  }, [likeCount]);
+  }, [likeCount,_id,isLiked]);
 
   useEffect(() => {
     console.log("id rendered new ", _id);
-  }, []);
+  }, [_id]);
 
   if (redirect) return <Navigate to="/login" />;
 

@@ -22,7 +22,7 @@ export default function EditPost() {
                 setSummary(data.summary);
                 setContent(data.content);
             });
-    }, []);
+    }, [id]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();

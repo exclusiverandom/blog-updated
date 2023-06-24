@@ -13,7 +13,7 @@ export default function FullPost() {
     fetch(`https://blog-point.onrender.com/post/${id}`)
       .then((data) => data.json())
       .then((data) => setPost(data));
-  }, []);
+  }, [id]);
 
   function deletePost() {
     fetch(`https://blog-point.onrender.com/deletepost/${id}`, {

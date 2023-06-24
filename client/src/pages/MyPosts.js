@@ -9,7 +9,7 @@ export default function MyPosts() {
       .then((data) => data.json())
       .then((data) => setPosts(data))
       .then(console.log(posts));
-  }, []);
+  }, [posts]);
   return (
     <div className="hero">
       {posts.length>0?posts.map((post) => (
