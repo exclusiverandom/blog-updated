@@ -57,7 +57,7 @@ app.post("/login", async (req, res) => {
       const token = jwt.sign({ username }, process.env.JWT_SECRET, {
         expiresIn: "5d",
       });
-      res.cookie("token", token, { httpOnly: true });
+      res.cookie("token", token);
       res.json(username);
     }
   }
