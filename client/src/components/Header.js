@@ -11,7 +11,7 @@ export default function Header() {
     })
       .then((data) => data.json())
       .then((data) => setUser(data.username));
-  }, []);
+  }, [setUser]);
   
   function logout(){
     fetch('https://blog-point.onrender.com/logout',{
@@ -41,7 +41,12 @@ export default function Header() {
             <Link to="/favourite">Favourites</Link>
             <Link to="/myposts">My Posts</Link>
             <Link to="/create">Create Post</Link>
-            <a style={{color:'red',fontWeight:'700'}} onClick={logout}>Logout</a>
+            <button
+              style={{ color: "red", fontWeight: "700" }}
+              onClick={logout}
+            >
+              Logout
+            </button>
           </>
         ) : (
           <>
