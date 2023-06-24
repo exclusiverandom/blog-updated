@@ -108,9 +108,9 @@ export default function Post({
           </h2>
         </div>
         <p className="info">
-          <a className="author" href="">
+          {/* <a className="author" href=""> */}
             {author}
-          </a>
+          {/* </a> */}
           <time>{formatISO9075(new Date(createdAt))}</time>
         </p>
         <p>{summary}</p>

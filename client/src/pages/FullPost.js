@@ -48,9 +48,9 @@ export default function FullPost() {
     <div className="full-post">
       <h1>{post.title}</h1>
       <p className="info">
-        <a className="author" href="">
+        {/* <a className="author" href=""> */}
           @{post.author}
-        </a>
+        {/* </a> */}
         <time>{formatISO9075(new Date(post.createdAt))}</time>
       </p>
       {user===post.author&&(
