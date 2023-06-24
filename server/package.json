@@ -1,4 +1,13 @@
 {
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend for the MERN stack application",
+  "main": "index.js",
+  "scripts":{
+    "dev": "nodemon index.js",
+    "build": "npm i"
+  },
+  
   "dependencies": {
     "bcrypt": "^5.1.0",
     "cookie-parser": "^1.4.6",
