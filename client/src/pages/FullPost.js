@@ -10,13 +10,13 @@ export default function FullPost() {
   const [redirect,setRedirect]=React.useState(false)
   const [post, setPost] = React.useState({});
   useEffect(() => {
-    fetch(`http://localhost:4000/post/${id}`)
+    fetch(`https://blog-point.onrender.com/post/${id}`)
       .then((data) => data.json())
       .then((data) => setPost(data));
   }, []);
 
   function deletePost() {
-    fetch(`http://localhost:4000/deletepost/${id}`, {
+    fetch(`https://blog-point.onrender.com/deletepost/${id}`, {
       method: 'DELETE',
       credentials: 'include'
     })
@@ -63,7 +63,7 @@ export default function FullPost() {
     )}
       <img
         className="banner-img"
-        src={`http://localhost:4000/${post.image}`}
+        src={`https://blog-point.onrender.com/${post.image}`}
         alt="post"
       />
       <div

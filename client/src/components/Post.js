@@ -31,7 +31,7 @@ export default function Post({
   async function handleLike() {
     let response;
     if (isLiked) {
-      response = await fetch("http://localhost:4000/unlike", {
+      response = await fetch("https://blog-point.onrender.com/unlike", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -41,7 +41,7 @@ export default function Post({
       });
       setLikeCount((prevCount) => prevCount - 1);
     } else {
-      response = await fetch("http://localhost:4000/like", {
+      response = await fetch("https://blog-point.onrender.com/like", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -93,7 +93,7 @@ export default function Post({
   return (
     <div className="post">
       <Link to={`/post/${_id}`}>
-        <img src={"http://localhost:4000/" + image} alt="post" />
+        <img src={"https://blog-point.onrender.com/" + image} alt="post" />
       </Link>
       <div className="post-content">
         <div className="headnlike">

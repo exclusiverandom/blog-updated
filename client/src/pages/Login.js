@@ -10,7 +10,7 @@ export default function Login() {
   const [redirect, setRedirect] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:4000/login", {
+    const response = await fetch("https://blog-point.onrender.com/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

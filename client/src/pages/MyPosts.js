@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function MyPosts() {
   const [posts, setPosts] = React.useState([]);
   React.useEffect(() => {
-    fetch("http://localhost:4000/myPosts", { credentials: "include" })
+    fetch("https://blog-point.onrender.com/myPosts", { credentials: "include" })
       .then((data) => data.json())
       .then((data) => setPosts(data))
       .then(console.log(posts));

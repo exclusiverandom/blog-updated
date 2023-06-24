@@ -9,7 +9,7 @@ export default function IndexPage() {
   const [posts, setPosts] = useState([]);
 
   const fetchPosts = () => {
-    fetch("http://localhost:4000/posts")
+    fetch("https://blog-point.onrender.com/posts")
       .then((data) => data.json())
       .then((data) => setPosts(data));
   };

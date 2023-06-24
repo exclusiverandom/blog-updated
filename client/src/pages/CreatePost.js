@@ -20,7 +20,7 @@ export default function CreatePost() {
     data.append("summary", summary);
     data.append("content", content);
     data.append("image", image[0]);
-    const response = await fetch("http://localhost:4000/createPost", {
+    const response = await fetch("https://blog-point.onrender.com/createPost", {
       method: "POST",
       body: data,
       credentials: "include",

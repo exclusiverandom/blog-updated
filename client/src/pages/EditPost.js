@@ -15,7 +15,7 @@ export default function EditPost() {
     const [redirect, setRedirect] = useState(false);
 
     useEffect(() => {
-        fetch("http://localhost:4000/post/" + id)
+        fetch("https://blog-point.onrender.com/post/" + id)
             .then((data) => data.json())
             .then((data) => {
                 setTitle(data.title);
@@ -32,7 +32,7 @@ export default function EditPost() {
         data.append("content", content);
         data.append("id", id);
         if(image.length>0) data.append("image", image[0]);
-        const response = await fetch("http://localhost:4000/editpost", {
+        const response = await fetch("https://blog-point.onrender.com/editpost", {
             method: "PUT",
             body: data,
             credentials: "include",

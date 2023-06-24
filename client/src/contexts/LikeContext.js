@@ -6,7 +6,7 @@ export default function LikeContextProvider({ children }) {
   const [likedPosts, setLikedPosts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/likedposts", {
+    fetch("https://blog-point.onrender.com/likedposts", {
       credentials: "include",
     })
       .then((data) => data.json())

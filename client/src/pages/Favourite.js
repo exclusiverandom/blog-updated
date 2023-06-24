@@ -8,7 +8,7 @@ export default function Favourite() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/likedposts", { credentials: "include" })
+    fetch("https://blog-point.onrender.com/likedposts", { credentials: "include" })
       .then((data) => data.json())
       .then((data) => setPosts(data));
   }, [likedPosts]);

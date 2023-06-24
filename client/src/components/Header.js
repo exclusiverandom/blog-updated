@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 export default function Header() {
   const {user,setUser}=useContext(UserContext)
   useEffect(() => {
-    fetch("http://localhost:4000/profile", {
+    fetch("https://blog-point.onrender.com/profile", {
       credentials: "include",
     })
       .then((data) => data.json())
@@ -14,7 +14,7 @@ export default function Header() {
   }, []);
   
   function logout(){
-    fetch('http://localhost:4000/logout',{
+    fetch('https://blog-point.onrender.com/logout',{
       credentials:'include'
     })
     setUser(null)
