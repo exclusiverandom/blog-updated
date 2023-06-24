@@ -22,6 +22,26 @@ mongoose
 app.use(express.json());
 app.use(cors({ credentials: true, origin: "https://blog-point-shubham.netlify.app" }));
 app.use(cookieParser());
+// configure cookie domain
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Credentials", "true");
+  res.header("Access-Control-Allow-Origin", "https://blog-point-shubham.netlify.app");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  res.header("Access-Control-Allow-Origin", "https://blog-point-shubham.netlify.app");
+  res.header("Access-Control-Allow-Credentials", "true");
+  res.header("Access-Control-Expose-Headers", "Set-Cookie");
+
+  // Set the cookie with the desired domain
+  res.cookie("token", token, {
+    domain: ".blog-point-shubham.netlify.app",
+    httpOnly: true,
+    secure: true,
+    sameSite: "none",
+  });
+
+  next();
+});
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
 app.listen(port, () => {
