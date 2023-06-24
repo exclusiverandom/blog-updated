@@ -20,7 +20,7 @@ mongoose
   .catch((err) => console.log(err));
 
 app.use(express.json());
-app.use(cors({ credentials: true, origin: "https://blog-point.onrender.com" }));
+app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
