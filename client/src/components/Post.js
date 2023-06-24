@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext,useCallback } from "react";
+import React, { useState, useEffect, useContext, useCallback } from "react";
 import { formatISO9075 } from "date-fns";
 import { Link, Navigate } from "react-router-dom";
 import { AiFillHeart } from "react-icons/ai";
@@ -16,16 +16,17 @@ export default function Post({
 }) {
   const { likedPosts, toggleLikedPost } = useContext(LikeContext);
   const [redirect, setRedirect] = useState(false);
-  const [isLiked, setIsLiked] = useState(checkLiked(_id));
   const [likeCount, setLikeCount] = useState(likedBy.length);
 
   const checkLiked = useCallback(() => {
     return likedPosts.includes(_id);
   }, [likedPosts, _id]);
 
+  const [isLiked, setIsLiked] = useState(checkLiked());
+
   useEffect(() => {
-    setIsLiked(checkLiked(_id));
-  }, [likedPosts, _id,checkLiked]);
+    setIsLiked(checkLiked());
+  }, [likedPosts, _id, checkLiked]);
 
   async function handleLike() {
     let response;
