@@ -20,7 +20,7 @@ mongoose
   .catch((err) => console.log(err));
 
 app.use(express.json());
-app.use(cors({ credentials: true, origin: "https://blog-point-shubham.onrender.com/" }));
+app.use(cors({ credentials: true, origin: "https://blog-point-shubham.onrender.com" }));
 app.use(cookieParser());
 // configure cookie domain
 // app.use((req, res, next) => {
