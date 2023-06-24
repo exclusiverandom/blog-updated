@@ -26,7 +26,7 @@ export default function Post({
 
   useEffect(() => {
     setIsLiked(checkLiked(_id));
-  }, [likedPosts, _id]);
+  }, [likedPosts, _id,checkLiked]);
 
   async function handleLike() {
     let response;
