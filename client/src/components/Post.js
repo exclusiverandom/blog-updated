@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext,useCallback } from "react";
 import { formatISO9075 } from "date-fns";
 import { Link, Navigate } from "react-router-dom";
 import { AiFillHeart } from "react-icons/ai";
@@ -19,10 +19,9 @@ export default function Post({
   const [isLiked, setIsLiked] = useState(checkLiked(_id));
   const [likeCount, setLikeCount] = useState(likedBy.length);
 
-  function checkLiked(id) {
-    if (likedPosts.includes(id)) return true;
-    else return false;
-  }
+  const checkLiked = useCallback(() => {
+    return likedPosts.includes(_id);
+  }, [likedPosts, _id]);
 
   useEffect(() => {
     setIsLiked(checkLiked(_id));
