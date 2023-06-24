@@ -20,7 +20,7 @@ mongoose
   .catch((err) => console.log(err));
 
 app.use(express.json());
-app.use(cors({ credentials: true, origin: "https://blog-point-shubham.netlify.app/" }));
+app.use(cors({ credentials: true, origin: "https://blog-point-shubham.netlify.app" }));
 app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
